@@ -1,6 +1,12 @@
 {
   "scripts": {
-    "watch": "watchify main.js -o public/bundle.js -dv",
-    "build": "browsreify main.js -o public/bundle.js"
+    "watch": "./node_modules/.bin/watchify main.js -o public/bundle.js -dv",
+    "build": "./node_modules/.bin/browserify main.js -o public/bundle.js"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "watchify": "^3.7.0",
+    "webaudio": "^2.0.0",
+    "yo-yo": "^1.1.1"
   }
 }
