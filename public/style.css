@@ -1,0 +1,25 @@
+body {
+  background-color: black;
+}
+
+#pyramid {
+  position: absolute;
+  width: 600px;
+  top: 108px;
+  left: 300px;
+  z-index: 10;
+}
+.palm {
+  position: absolute;
+  height: 200px;
+  top: 180px;
+}
+
+#sand {
+  position: absolute;
+  top: 380px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: cyan;
+}
