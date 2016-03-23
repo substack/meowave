@@ -1,3 +1,7 @@
+var html = require('yo-yo')
+var root = document.querySelector('#content')
+var state = { time: 0 }
+
 var webaudio = require('webaudio')
 var song = require('./song.js')
 var b = webaudio(function (t) {
@@ -6,12 +10,13 @@ var b = webaudio(function (t) {
 })
 b.play()
 
-var html = require('yo-yo')
-var root = document.querySelector('#content')
-var state = { time: 0 }
-setInterval(function () {
+window.requestAnimationFrame(frame)
+function frame () {
   html.update(root, render(state))
-}, 50)
+  process.nextTick(function () {
+    window.requestAnimationFrame(frame)
+  })
+}
 
 var dirs = [ 'center', 'left', 'center', 'right' ]
 
@@ -34,9 +39,16 @@ function render (state) {
         src="images/magenta_palm_${mdir}.png">`)
     }
   }
+  var moonstyle = `left: ${400+Math.sin(-state.time/3) * 400};
+    top: ${300+Math.cos(-state.time/3) * 400};`
+  var starstyle = `transform: translate(-800px,-400px)
+    rotate(${state.time*8*4}deg);`
+
   return html`<div>
+    <img id="stars" src="images/nebula.jpg" style="${starstyle}">
     <img id="pyramid" src="images/pyramid${beat}.png">
     ${palms}
+    <img id="moon" src="images/moon.png" style="${moonstyle}">
     <div id="sand"></div>
   </div>`
 }

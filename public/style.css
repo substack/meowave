@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  overflow: hidden;
 }
 
 #pyramid {
@@ -7,12 +8,13 @@ body {
   width: 600px;
   top: 108px;
   left: 300px;
-  z-index: 10;
+  z-index: 15;
 }
 .palm {
   position: absolute;
   height: 200px;
   top: 180px;
+  z-index: 10;
 }
 
 #sand {
@@ -22,4 +24,15 @@ body {
   right: 0px;
   bottom: 0px;
   background-image: url(images/hieroglyphics.png);
+  z-index: 20;
+}
+
+#moon {
+  position: absolute;
+  z-index: 5;
+}
+
+#stars {
+  position: absolute;
+  width: 200%;
 }
