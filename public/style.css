@@ -17,9 +17,9 @@ body {
 
 #sand {
   position: absolute;
-  top: 380px;
+  top: 370px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: cyan;
+  background-image: url(images/hieroglyphics.png);
 }
